@@ -50,8 +50,9 @@ labelencoder = LabelEncoder()
 train_x['Type'] = labelencoder.fit_transform(train_x['Type'])
 
 # Select numeric columns that can be converted as is
-num_cols= ["Reviews"]
+num_cols = ["Reviews"]
 
+train_x["Type"] = train_x[num_cols].astype(float)
 
 
 
