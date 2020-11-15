@@ -2,9 +2,9 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 
-def missing_values(test):
-    total = test.isnull().sum().sort_values(ascending=False)
-    percent_1 = test.isnull().sum()/test.isnull().count()*100
+def missing_values(df):
+    total = df.isnull().sum().sort_values(ascending=False)
+    percent_1 = df.isnull().sum()/df.isnull().count()*100
     percent_2 = (round(percent_1, 1)).sort_values(ascending=False)
     missing_data = pd.concat([total, percent_2], axis=1, keys=['Total', '%'])
     return missing_data.head((missing_data['Total'] > 0).sum())
