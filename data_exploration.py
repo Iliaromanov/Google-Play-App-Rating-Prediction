@@ -54,6 +54,6 @@ num_cols = ["Reviews"]
 
 train_x["Type"] = train_x[num_cols].astype(float)
 
-
+check = 1
 
 
